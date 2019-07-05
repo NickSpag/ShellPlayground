@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ShellPlayground.Views.ScrollPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0"
+              ColumnSpacing="0">
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS"
+                        Value="0,20,0,0" />
+                </OnPlatform>
+            </Grid.Margin>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="ContentGrid"
+                  RowSpacing="0"
+                  ColumnSpacing="0"
+                  Grid.Row="1">
+                <ScrollView x:Name="Scroller">
+                    <Grid RowSpacing="0"
+                          ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="ImageRow"
+                                           Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Image x:Name="CarImage"
+                               Source="car.jpg"
+                               Aspect="AspectFill"
+                               Grid.Row="0" />
+
+                        <StackLayout Orientation="Vertical"
+                                     Padding="40"
+                                     Grid.Row="1">
+                            <Label Text="Title"
+                                   FontAttributes="Bold"
+                                   FontSize="Title"
+                                   FontFamily="Helvetica"
+                                   Margin="0,20,0,0" />
+                            <Label Margin="0,0,0,20"
+                                   FontSize="Subtitle"
+                                   FontAttributes="None"
+                                   FontFamily="Helvetica-Neue">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Label>
+
+                            <Label Text="Subtitle"
+                                   FontAttributes="Bold"
+                                   FontSize="Subtitle" />
+                            <Label FontFamily="Helvetica-Neue"
+                                   FontSize="Subtitle"
+                                   Margin="0,0,0,20">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </Label>
+
+                            <Label Text="Subtitle"
+                                   FontAttributes="Bold"
+                                   FontSize="Subtitle" />
+                            <Label FontFamily="Helvetica-Neue"
+                                   FontSize="Subtitle">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Label>
+
+                        </StackLayout>
+                    </Grid>
+                </ScrollView>
+
+                <!-- FIXED HEADER -->
+                <Label x:Name="FixedHeaderText"
+                       Text="Hello!"
+                       TextColor="White"
+                       BackgroundColor="#FF264778"
+                       HeightRequest="40"
+                       VerticalOptions="Start"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" />
+                <!-- FIXED HEADER END -->
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
