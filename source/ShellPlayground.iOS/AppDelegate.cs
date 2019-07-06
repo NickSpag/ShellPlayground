@@ -22,6 +22,11 @@ namespace ShellPlayground.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+#if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+            System.Console.WriteLine("CALABASH STARTED");
+#endif
+
             global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
