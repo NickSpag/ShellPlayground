@@ -42,13 +42,13 @@
 
     <!-- Your Pages -->
     <TabBar>
-        <Tab Title="About"
-             Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
         <Tab Title="Scroll"
              Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ScrollPage}" />
         </Tab>
+        <Tab Title="About"
+             Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab        >
     </TabBar>
 </Shell>
