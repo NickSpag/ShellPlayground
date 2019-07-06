@@ -406,3 +406,5 @@ ASALocalRun/
 
 #NICKSPAG
 DevResources/
+*.app
+*.apk
