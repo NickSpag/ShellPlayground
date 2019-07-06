@@ -1,0 +1,1 @@
+In this folder, you should place your .app or .ipa file, for iOS builds, and your .apk file for Android builds. The UITest project will look here for the binaries
