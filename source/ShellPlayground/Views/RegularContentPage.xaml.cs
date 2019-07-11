@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace ShellPlayground
+namespace ShellPlayground.Views
 {
     public partial class RegularContentPage : ContentPage
     {
