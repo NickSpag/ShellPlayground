@@ -21,7 +21,8 @@
                   RowSpacing="0"
                   ColumnSpacing="0"
                   Grid.Row="1">
-                <ScrollView x:Name="Scroller">
+                <ScrollView x:Name="Scroller"
+                            AutomationId="Scroller">
                     <Grid RowSpacing="0"
                           ColumnSpacing="0">
                         <Grid.RowDefinitions>
@@ -31,6 +32,7 @@
                         </Grid.RowDefinitions>
 
                         <Image x:Name="CarImage"
+                               AutomationId="CarImage"
                                Source="car.jpg"
                                Aspect="AspectFill"
                                Grid.Row="0" />
@@ -65,13 +67,15 @@
                             <Label FontFamily="Helvetica-Neue"
                                    FontSize="Subtitle">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Label>
-
+                            <Label Text="Fin"
+                                   AutomationId="FinalTextBox" />
                         </StackLayout>
                     </Grid>
                 </ScrollView>
 
                 <!-- FIXED HEADER -->
                 <Label x:Name="FixedHeaderText"
+                       AutomationId="FixedHeaderTextLabel"
                        Text="Hello!"
                        TextColor="White"
                        BackgroundColor="Gold"

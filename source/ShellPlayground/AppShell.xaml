@@ -39,16 +39,46 @@
                    BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-
-    <!-- Your Pages -->
-    <TabBar>
-        <Tab Title="About"
-             Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
-        <Tab Title="Scroll"
-             Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ScrollPage}" />
-        </Tab>
-    </TabBar>
+    <!-- Flyout Header -->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black" HeightRequest="200">
+                <Image Aspect="AspectFill" Source="xamarinstore.jpg" Opacity="0.6" />
+                <Label Text="Animals" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <!-- Flyout Items -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}" Margin="5" HeightRequest="45" />
+                <Label Grid.Column="1" Text="{Binding Title}" FontAttributes="Italic" VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <!-- Flyout MenuItems -->
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}" Margin="5" HeightRequest="45" />
+                <Label Grid.Column="1" Text="{Binding Text}" FontAttributes="Italic" VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    <!-- Your Pages: Tabs and Flyout Items-->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Scroll" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:ScrollPage}" />
+        <ShellContent Title="About" Icon="tab_about.png" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+    <!-- Your Pages: Flyout Items But *NOT* Tabs-->
+    <ShellContent Title="Regular Content Page" Icon="info.png" ContentTemplate="{DataTemplate local:RegularContentPage}" />
 </Shell>
